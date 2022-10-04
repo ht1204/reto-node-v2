@@ -1,5 +1,6 @@
 import { retrieverInitData } from '../http-request';
 import { redisMiddleware } from '../redis';
+import { mongoMiddleware } from '../mongodb';
 
 
 export const runApplication = async () => {
@@ -19,6 +20,8 @@ export const runApplication = async () => {
         password: redisPass
     }
 
-    await redisMiddleware(redisCredentials);
+    const mongoCredentials = await redisMiddleware(redisCredentials);
+    await mongoMiddleware(mongoCredentials);
+
 
 }

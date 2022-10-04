@@ -1,4 +1,4 @@
-import { runApplication } from '../runner';
+import { runApplication } from './runner';
 
 const init = async () => {
 
