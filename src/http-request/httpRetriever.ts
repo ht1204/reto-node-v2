@@ -1,18 +1,11 @@
 import axios from 'axios';
 import { URL_ENDPOINT } from '../utils/constants';
+import { httpDataParser } from './dataParser';
 
 export const retrieverInitData = async () => {
 
     const response = await axios.post(URL_ENDPOINT);
-
     const{ data: { credentials } } = response;
-    const {host, port, user, password } = credentials;
-    console.log(host, port, user, password);
+    return httpDataParser(credentials);
+}
 
-    return {
-        host, 
-        port, 
-        user,
-        password
-    }
-} 

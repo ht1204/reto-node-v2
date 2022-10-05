@@ -21,9 +21,10 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
 
         connect(mongoURI);
         connection.on("error", console.error.bind(console, "connection error: "));
-        connection.once("open", function () {
+        connection.once("open", async () => {
             console.log("Connected successfully");
         });
+
     }catch(error){
       console.log("Error: ", error);
     }

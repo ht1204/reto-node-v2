@@ -35,7 +35,8 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
         const usernameFromRedis = await client.get("username");
         const passwordFromRedis = await client.get("password");
 
-        console.log(hostFromRedis, usernameFromRedis, passwordFromRedis);
+        console.log('Gathered Redis Data');
+        console.log(hostFromRedis, '-', usernameFromRedis, '-', passwordFromRedis);
         
         const hostForMongo: string = hostFromRedis || 'cluster0.lmfyyop.mongodb.net';
         const userForMongo: string = usernameFromRedis || 'taller-mir';
@@ -49,6 +50,8 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
     }catch(error){
         console.log("Error: ", error);
     }
+    console.log();
+    console.log('mongoDBCredentials: ', mongoDBCredentials);
 
     return mongoDBCredentials;
 }
