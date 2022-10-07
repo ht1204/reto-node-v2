@@ -30,16 +30,13 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
 
         connect(mongoURI);
 
-        connection.on("error", console.error.bind(console, "connection error: "));
-        connection.once("open",  () => {
-            console.log("Connected successfully to mongoDB Cluster");
-        });
-
         let collections: any[] = [];
         let collectionName: string = '';
 
-        connection.on("open", () => {
-            console.log("Connected to mongo server.");
+        connection.on("error", console.error.bind(console, "connection error: "));
+
+        connection.once("open",  () => {
+            console.log("Connected successfully to mongoDB Cluster");
             connection.db.listCollections().toArray((err, names) => {
                 if(names){
                     for (const element of names) {
@@ -49,7 +46,6 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
                 }
                 
                 collectionName = collections[0];
-                console.log('collectionName: ', collectionName);
                 const projection = { _id: 0, code: 1 };
                 const cursor = connection.db.collection(collectionName)
                                 .find({}).project(projection).toArray();
@@ -57,13 +53,12 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
                 
                 cursor.then((data) => {
                     const { code } = data[0];
-                    console.log('code: ', code);
                     decoder(code);
-                });     
+                })
+                .catch(err => console.log('Cursor error: ', err));     
 
             });
-
-          });
+        });
 
     }catch(error){
       console.log("Error: ", error);
