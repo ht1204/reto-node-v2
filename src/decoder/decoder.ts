@@ -7,5 +7,3 @@ export const decoder = (code: string) => {
     secretCode = decode(code);
     console.log('secretCode: ', secretCode);
 }
-
-export const getSecretCode = () => secretCode;
