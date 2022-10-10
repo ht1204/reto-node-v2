@@ -30,7 +30,7 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
 
         connect(mongoURI);
 
-        let collections: any[] = [];
+        let collections: string[] = [];
         let collectionName: string = '';
 
         connection.on("error", console.error.bind(console, "connection error: "));
