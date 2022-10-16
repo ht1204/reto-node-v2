@@ -3,12 +3,20 @@
 
 ## Instrucciones
 
-- Para instalar dependencias: ```npm install ``` o  ```npm i ```
+- Para instalar dependencias: ```npm install ``` o  ```npm i ``` \
+
+## En modo desarrollo
 - Por tener Typescript, considere primero generar la versión Javascript por transpilación: 
 - Correr modo desarrollador: ```npm run dev ```
-- Después de comprobar el funcionamiento, arrancar la aplicación en modo producción: ```npm run start ```
+- Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac \
+
+## En modo desarrollo
+- Después de comprobar funcionamiento en modo desarrollo, arrancar la aplicación en modo producción: ```npm run start ```
+- El servidor se apaga una vez logra el objetivo de decodificar el código secreto. \
+
+## Salida de sistema
 - Visualizar código secreto obtenido y comparar la pista obtenida por medio de un endpoint.
-- Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac
+
 
 ## Bases de datos
 - Redis
