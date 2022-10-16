@@ -8,7 +8,7 @@
 ## En modo desarrollo
 - Por tener Typescript, considere primero generar la versión Javascript por transpilación: 
 - Correr modo desarrollador: ```npm run dev ```
-- Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac \
+- Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac.
 
 ## En modo desarrollo 
 - Precondición: haber probado el **modo desarrollo**
