@@ -3,7 +3,7 @@
 
 ## Instrucciones
 
-- Para instalar dependencias: ```npm install ``` o  ```npm i ``` \
+- Para instalar dependencias: ```npm install ``` o  ```npm i ``` .
 
 ## En modo desarrollo
 - Por tener Typescript, considere primero generar la versión Javascript por transpilación: 
