@@ -10,9 +10,10 @@
 - Correr modo desarrollador: ```npm run dev ```
 - Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac \
 
-## En modo desarrollo
-- Después de comprobar funcionamiento en modo desarrollo, arrancar la aplicación en modo producción: ```npm run start ```
-- El servidor se apaga una vez logra el objetivo de decodificar el código secreto. \
+## En modo desarrollo 
+- Precondición: haber probado el **modo desarrollo**
+- Arrancar la aplicación en modo producción:  ```npm run start ```
+- El servidor se apaga una vez logra el objetivo de decodificar el código secreto. 
 
 ## Salida de sistema
 - Visualizar código secreto obtenido y comparar la pista obtenida por medio de un endpoint.
