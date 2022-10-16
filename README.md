@@ -4,8 +4,9 @@
 ## Instrucciones
 
 - Para instalar dependencias: ```npm install ``` o  ```npm i ```
-- Luego, arrancar la aplicación: ```npm run start ```
-- Para correr en modo desarrollador: ```npm run dev ```
+- Por tener Typescript, considere primero generar la versión Javascript por transpilación: 
+- Correr modo desarrollador: ```npm run dev ```
+- Después de comprobar el funcionamiento, arrancar la aplicación en modo producción: ```npm run start ```
 - Visualizar código secreto obtenido y comparar la pista obtenida por medio de un endpoint.
 - Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac
 
