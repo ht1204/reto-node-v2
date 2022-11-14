@@ -1,7 +1,3 @@
-import { runApplication } from './runner';
+import { runApplication }  from './runner/runApplication';
 
-const init = async () => {
-    await runApplication();
-}
-
-init();
+runApplication();

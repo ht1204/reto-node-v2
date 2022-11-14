@@ -1,6 +1,7 @@
-import { retrieverInitData, retrieveAccessCode } from '../http-request';
-import { redisMiddleware } from '../redis';
-import { mongoMiddleware } from '../mongodb';
+import { retrieverInitData } from '../http-request/httpRetriever';
+import { retrieveAccessCode } from '../http-request/httpAccessCode';
+import { redisMiddleware } from '../redis/redisMiddleware';
+import { mongoMiddleware } from '../mongodb/mongoMiddleware';
 
 
 export const runApplication = async () => {

@@ -11,7 +11,6 @@
 - Para apagar servidor, presionar la combinación de teclas ```Ctrl + C``` o en ```Command + C``` en Mac.
 
 ## En modo producción 
-- Precondición: haber probado el **modo desarrollo**
 - Arrancar la aplicación en modo producción:  ```npm run start ```
 - El servidor se apaga una vez logra el objetivo de decodificar el código secreto. 
 

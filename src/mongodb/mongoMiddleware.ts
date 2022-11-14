@@ -1,5 +1,5 @@
 import { connect, connection } from 'mongoose';
-import { decoder } from '../decoder';
+import { decrypt } from '../decoder/decrypt';
 
 interface mongoMiddlewareProps {
     mongoHost: string;
@@ -50,12 +50,11 @@ export const mongoMiddleware = async ({ mongoHost, mongoUsername, mongoPassword 
                 const cursor = connection.db.collection(collectionName)
                                 .find({}).project(projection).toArray();
 
-                
                 cursor.then((data) => {
                     const { code } = data[0];
-                    decoder(code);
+                    decrypt(code);
                 })
-                .catch(err => console.log('Cursor error: ', err));     
+                .catch(err => console.log('Cursor error: ', err));
 
             });
         });

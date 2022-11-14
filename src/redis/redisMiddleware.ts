@@ -3,7 +3,7 @@ import { createClient } from 'redis';
 interface redisMiddlewareProps {
     host: string;
     port: string;
-    user:string
+    user: string
     password: string;
 }
 
@@ -15,12 +15,12 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
         mongoPassword: '',
     }
 
-    try{
+    try {
         const username = user;
         const redisPort = port as unknown as number;
 
         const client = createClient({
-            socket:{
+            socket: {
                 host,
                 port: redisPort
             },
@@ -28,7 +28,10 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
             password
         });
 
-        client.on("error", (error) => console.error(`Error : ${error}`));
+        client.on("error", (error: Error) => {
+            console.error(`Error : ${error}`);
+            process.exit(0);
+        });
         await client.connect();
 
         const hostFromRedis = await client.get("host");
@@ -37,7 +40,7 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
 
         console.log('Gathered Redis Data');
         console.log(hostFromRedis, '-', usernameFromRedis, '-', passwordFromRedis);
-        
+
         const hostForMongo: string = hostFromRedis || 'mongo.cluster';
         const userForMongo: string = usernameFromRedis || 'mongo.user';
         const passwordForMongo: string = passwordFromRedis || 'mongo.pass';
@@ -47,7 +50,7 @@ export const redisMiddleware = async ({ host, port, user, password }: redisMiddl
             mongoUsername: userForMongo,
             mongoPassword: passwordForMongo,
         }
-    }catch(error){
+    } catch (error) {
         console.log("Error: ", error);
     }
     console.log();
